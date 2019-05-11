@@ -1,0 +1,462 @@
+/*
+** general declaration
+*/
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #e0e0e0;
+}
+html, body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    padding: 0 10px;
+}
+section{
+    border-bottom: 1px solid #424242;
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+section:last-child{
+    border-bottom: none;
+}
+.slider{
+    position: relative;
+}
+.slider #arrow-left, .slider #arrow-right{
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    cursor: pointer;
+}
+.slider #arrow-left{
+    transform: translateY(-50%) rotate(-90deg);
+}
+.slider #arrow-right{
+    transform: translateY(-50%) rotate(90deg);
+    right: 0;
+}
+.main-slide{
+    background-color: #e0e0e0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: inherit;
+    overflow: hidden;
+}
+.item-slide{
+    text-align: center;
+    overflow: hidden;
+    min-width: 100%;
+    padding: 15px 35px;
+}
+.title-section{
+    text-align: center;
+    line-height: 1.6;
+}
+.title-section span{
+    font-size: 1.65rem;
+    font-weight: normal;
+    display: block;
+}
+.nav-filter{
+    text-align: center;
+    justify-content: center;
+    margin: 30px 10px;
+    display: flex;
+}
+.nav-filter a{
+    transition: all .3s ease;
+}
+.nav-filter .target, .nav-filter a:hover{
+    background-color: #626262;
+    color: #e0e0e0;
+}
+.nav-filter a{
+    color: #424242;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+.nav-filter a:nth-child(2){
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.header{
+    background-color: #424242;
+    padding: 1px 20px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .navbar{
+    position: absolute;
+    top: 63px;
+    left: -260px;
+    width: 260px;
+    transition: left .3s ease;
+    z-index: 1;
+}
+.header .menu-toggle{
+    left: 0;
+}
+#hamburger span{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 35px;
+    background: #e0e0e0;
+    margin: 5px 0;
+}
+.header nav a{
+    display: block;
+    padding: 20px 15px 20px 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.header li{
+    list-style-type: none;
+}
+.header ul{
+    background: #424242;
+    padding: 0;
+    margin: 0;
+}
+.main-card{
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 0 10px #eeecec;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.card .content {
+    display: flex;
+}
+.card img{
+    width: 120px;
+}
+.card .detail{
+    padding: 0 10px;
+}
+.card .detail h3{
+    margin-top: 5px;
+}
+.main-hunters .detail h3, .main-hunters .detail p{
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+.card .info-absolu p{
+    background: #cacaca;
+    display: inline-block;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0;
+}
+.card .info-absolu{
+    text-align: center;
+}
+.card .dead{
+    position: relative;
+}
+.card .dead .info-absolu p{
+    background: none;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    text-transform: uppercase;
+}
+.card .dead .info-absolu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(240, 240, 240, .8);
+    border-radius: 0;
+}
+.main-reward .content{
+    text-align: center;
+}
+section .btn-contact{
+    text-align: center;
+}
+section .btn-contact p{
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: inline-block;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+.main-hunters .detail{
+    margin-left: 10px;
+}
+.main-hunters .detail p{
+    font-size: .9rem;
+}
+.main-hunters .profil{
+    display: flex;
+    min-width: 260px;
+    margin-bottom: 20px;
+}
+.main-hunters{
+    margin-left: 10px;
+}
+.main-hunters .avatar-profil img{
+    padding: 5px;
+}
+.main-hunters .detail .like a{
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: normal;
+    font-size: .8em;
+    background: #424242;
+    padding: 3px 6px;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 3px;
+}
+.main-hunters .detail .like img{
+    margin-right: 5px;
+}
+.main-hunters .detail a{
+    color: #424242;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.ring .group{
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.ring .title-group{
+    background: #e0e0e0;
+    border-radius: 8px 8px 0 0 ;
+}
+.ring .title-group h3{
+    border-radius: 8px 8px 0 0 ;
+    padding: 15px;
+    margin: 0;
+}
+.ring .main-group{
+    padding: 0 20px 20px 20px;
+}
+.ring table{
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+.ring table th, .ring table td{
+    border: 1px solid #000;
+    padding: 15px 10px;
+    width: 50%;
+}
+.ring table th{
+    text-transform: uppercase;
+    background: #424242;
+    color: #e0e0e0;
+}
+.ring table tr:nth-child(odd){
+    background: #e0e0e0;
+}
+.ring .main-flex img{
+    border-radius: 65px;
+    margin-top: 25px;
+}
+.ring .main-flex .author{
+    text-align: right;
+    color: #909090;
+}
+.ring .main-flex{
+    text-align: center;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.army .main-army{
+    text-align: center;
+}
+.contact .main-contact{
+    margin: 0 15px;
+}
+.contact .item-form{
+    margin: 10px auto;
+}
+.contact input, .contact select, .contact textarea{
+    width: 100%;
+    padding: 8px;
+}
+.contact input{
+    padding-left: 35px;
+}
+.contact .email input{
+    background: url(https://icongr.am/fontawesome/at.svg?size=25&color=909090) no-repeat;
+    background-position: left;
+}
+.contact .home input{
+    background: url(https://icongr.am/fontawesome/home.svg?size=25&color=909090) no-repeat;
+    background-position: left;
+}
+footer{
+    background: #424242;
+    padding: 15px 25px;
+}
+footer .footer-section{
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+footer .footer-section:last-child{
+    margin-bottom: 15px;
+}
+footer .item-footer{
+    font-size: 0.9rem;
+}
+
+
+@media screen and (min-width: 600px) {
+    /*
+    ** header
+    */
+    .header{
+        padding: 0 20px;
+        background-color: #424242;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0 0 5px #424242;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .header #hamburger{
+        display: none;
+    }
+    .header .navbar{
+        position: initial;
+        width: auto;
+    }
+    .header nav, .header .title{
+        display: flex;
+        align-items: center;
+    }
+    .header nav a{
+        display: inline-block;
+        padding: 12px 10px;
+        border-bottom: none;
+    }
+    .header li{
+        display: inline-block;
+    }
+    .header ul, .header h3{
+        padding: 0;
+        margin: 0;
+    }
+    .header nav a:hover{
+        background-color: #e0e0e0;
+        color: #424242;
+    }
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .slider{
+        height: 300px;
+    }
+    .title-section{
+        text-align: left;
+        padding-left: 15px;
+    }
+    .title-section h2{
+        display: inline-block;
+    }
+    .card{
+        display: flex;
+    }
+    .main-card{
+        position: relative;
+        margin-left: 10px;
+        margin-right: 10px;
+        max-width: 300px;
+    }
+    .card .content{
+        display: block;
+    }
+    .card img{
+        height: 230px;
+        width: 100%;
+    }
+    .card .detail p{
+        font-size: 0.9em;
+    }
+    .card .life .info-absolu{
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+    }
+    
+    .main-reward .content{
+        text-align: left;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .main-reward .content img, .main-reward .content p{
+        margin: 0 10px;
+    }
+    .profils{
+        display: flex;
+    }
+    .main-hunters{
+        margin: 0 10px;
+    }
+    .ring .main-group{
+        padding: 0 40px 20px 40px;
+    }
+    
+    .ring .main-flex{
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 20px;
+        text-align: left;
+    }
+    
+    .ring .main-flex .text{
+        width: 100%;
+        text-align: right;
+    }
+    .ring .main-flex img{
+        margin-top: 0;
+    }
+    .ring .main-flex .img{
+        flex: none;
+        width: 150px;
+        text-align: center;
+        margin-top: 0;
+        margin-left: 75px;
+    }    
+    .army .main-army .content{
+        display: flex;
+    }
+    .army .main-army img, .army .main-army p{
+        margin: 0 10px;
+    }
+    .army .main-army p{
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    footer .item-footer{
+        display: flex;
+        justify-content: space-around;
+        font-size: 0.8rem;
+    }
+    footer .footer-section{
+        margin-bottom: 40px;
+        border-bottom: none;
+    }
+}
