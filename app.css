@@ -149,12 +149,13 @@ section:last-child{
     margin-bottom: 3px;
 }
 .card .info-absolu p{
-    background: #cacaca;
+    background: #f0f0f0;
     display: inline-block;
-    color: #fff;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 0;
+    opacity: .8;
+    font-size: 2rem;
 }
 .card .info-absolu{
     text-align: center;
@@ -377,28 +378,57 @@ footer .item-footer{
     .card{
         display: flex;
     }
+    .card .life .avatar{
+        position: relative;
+    }
     .main-card{
         position: relative;
         margin-left: 10px;
         margin-right: 10px;
-        max-width: 300px;
+        width: auto;
     }
     .card .content{
         display: block;
     }
     .card img{
-        height: 230px;
         width: 100%;
     }
     .card .detail p{
         font-size: 0.9em;
+    }
+    .card .life .info-absolu, .card img, .card .name-absolu{
+        transition: all .6s ease;
+    }
+    .card .life .name-absolu{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        color: #f0f0f0;
+        font-size: 3.5em;
+        transform: translateX(-50%);
     }
     .card .life .info-absolu{
         position: absolute;
         top: 20px;
         left: 50%;
         transform: translateX(-50%);
-        width: 200px;
+        width: 80%;
+    }
+    .card .life .info-absolu span{
+        color: rgb(184, 90, 2)
+    }
+    .card .life .avatar:hover img{
+        opacity: 1;
+    }
+    .card .life .avatar:hover .info-absolu{
+        opacity: 0;
+    }
+    .card .life .avatar:hover .name-absolu{
+        font-size: 1em;
+        top: 80%;
+    }
+    .card .life img{
+        opacity: .3;
     }
     
     .main-reward .content{
